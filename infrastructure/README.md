@@ -22,8 +22,11 @@ Initialize Terraform:
   ```bash
 terraform init
 
-4. Apply the infrastructure (with your own password):
+```markdown
+4. 🚀 Apply the infrastructure (with your own password):
 
+```bash
+terraform apply -var="db_password=YOUR_SECURE_PASSWORD"
 ```bash
 terraform apply -var="db_password=YOUR_SECURE_PASSWORD"
 
