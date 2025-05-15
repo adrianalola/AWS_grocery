@@ -19,14 +19,17 @@ Initialize Terraform:
 
 3. Initialize Terraform:
 
+  ```bash
 terraform init
 
 4. Apply the infrastructure (with your own password):
 
+```bash
 terraform apply -var="db_password=YOUR_SECURE_PASSWORD"
 
 Or create a terraform.tfvars file with:
 
+```hcl
 db_password = "YOUR_SECURE_PASSWORD"
 
 🧾 Outputs
@@ -36,6 +39,7 @@ RDS PostgreSQL Endpoint
 
 You can view them with:
 
+```bash
 terraform output
 
 🛑🔒 Important Notes
