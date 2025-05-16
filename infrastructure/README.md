@@ -9,7 +9,7 @@ This folder contains the infrastructure-as-code (IaC) setup for the project usin
 - ✅ **EC2 Instance** (Amazon Linux 2) with key pair access
 - ✅ **Security Group** allowing SSH (port 22) and HTTP (port 80)
 - ✅ **RDS PostgreSQL instance** (version configurable)
-- ✅ Modular files for better organization
+- ✅ Modular files for better organisation
 - ✅ `.gitignore` to protect sensitive files
 
 ---
@@ -70,18 +70,7 @@ terraform output
 
 ---
 
-## 🔧 Optional: Using the Makefile
 
-You can also use the included `Makefile` to simplify commands:
-
-```bash
-make init
-make apply DB_PASSWORD=YOUR_SECURE_PASSWORD
-make outputs
-make destroy DB_PASSWORD=YOUR_SECURE_PASSWORD
-```
-
----
 
 ## 🛡 .gitignore Notes
 
