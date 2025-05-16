@@ -1,91 +1,70 @@
 # 🛠 Infrastructure Setup with Terraform
 
-This folder contains the infrastructure-as-code (IaC) setup for the project using **Terraform** on AWS. It includes everything needed to launch a backend-ready environment with compute and database resources.
-
----
+This folder contains the infrastructure-as-code (IaC) setup for the project using **Terraform** on AWS.
 
 ## 📁 What's Included
 
-- ✅ **EC2 Instance** (Amazon Linux 2) with key pair access
-- ✅ **Security Group** allowing SSH (port 22) and HTTP (port 80)
-- ✅ **RDS PostgreSQL instance** (version configurable)
-- ✅ Modular files for better organisation
-- ✅ `.gitignore` to protect sensitive files
-
----
+- ✅ EC2 Instance
+- ✅ Security Group (SSH + HTTP)
+- ✅ RDS PostgreSQL instance
 
 ## 🚀 How to Deploy
 
-1. 🔐 Authenticate with AWS
+1. Make sure you are authenticated via AWS SSO or `aws configure`.
+2. Move into the folder:
 
-Using SSO:
+   ```bash
+   cd infrastructure/
+Initialize Terraform:
 
-```bash
-aws sso login --profile YOUR_PROFILE_NAME
-```
+3. Initialize Terraform:
 
-Or with credentials:
-
-```bash
-aws configure
-```
-
-2. 📦 Move into the infrastructure folder:
-
-```bash
-cd infrastructure/
-```
-
-3. 🧱 Initialize Terraform:
-
-```bash
+bash
+Copiar
+Editar
 terraform init
-```
 
-4. 🚀 Apply the infrastructure:
+4. Apply the infrastructure (with your own password):
 
-With password inline:
-
-```bash
+bash
+Copiar
+Editar
 terraform apply -var="db_password=YOUR_SECURE_PASSWORD"
-```
 
-Or create a `terraform.tfvars` file with:
+Or create a terraform.tfvars file with:
 
-```hcl
+hcl
+Copiar
+Editar
 db_password = "YOUR_SECURE_PASSWORD"
-```
 
-Then just run:
+🧾 Outputs
+EC2 Public IP
 
-```bash
-terraform apply
-```
+RDS PostgreSQL Endpoint
 
-5. 📤 View outputs (EC2 IP, RDS endpoint):
+You can view them with:
 
-```bash
+bash
+Copiar
+Editar
 terraform output
-```
 
----
+🛑🔒 Important Notes
+Do not commit .pem files or terraform.tfvars.
 
+These are ignored via .gitignore.
 
-
-## 🛡 .gitignore Notes
-
+🛡 .gitignore Notes
 The following files are ignored for security:
 
-```
+Copiar
+Editar
 *.pem
 terraform.tfvars
 .terraform/
 terraform.tfstate
-terraform.tfstate.backup
-```
+.terraform/
 
-> ⚠️ Never commit `.pem` files or `terraform.tfvars` with passwords.
-
-
-
+❌ Never commit .pem files or terraform.tfvars with passwords.
 

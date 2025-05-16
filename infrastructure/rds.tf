@@ -12,7 +12,7 @@ resource "aws_db_subnet_group" "default" {
 resource "aws_db_instance" "postgres" {
   identifier              = "grocery-postgres-db"
   engine                  = "postgres"
-  engine_version          = "16.8"
+  engine_version          = "16.6"
   instance_class          = "db.t3.micro"
   allocated_storage       = 20
   db_name                 = var.db_name
@@ -20,7 +20,7 @@ resource "aws_db_instance" "postgres" {
   password                = var.db_password
   skip_final_snapshot     = true
   publicly_accessible     = true
-  vpc_security_group_ids  = [aws_security_group.web_sg.id] #buscar en donde se encuentra
+  vpc_security_group_ids  = [aws_security_group.web_sg.id]
   db_subnet_group_name    = aws_db_subnet_group.default.name
 
   tags = {
