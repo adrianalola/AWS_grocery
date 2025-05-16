@@ -5,7 +5,7 @@ This folder contains the infrastructure-as-code (IaC) setup for the project usin
 ✅ EC2 Instance (Amazon Linux 2) with key pair access
 ✅ Security Group allowing SSH (port 22) and HTTP (port 80)
 ✅ RDS PostgreSQL instance (version configurable)
-✅ Modular files for better organization
+✅ Modular files for better organisation
 ✅ .gitignore to protect sensitive files
 🚀 How to Deploy
 🔐 Authenticate with AWS
@@ -31,13 +31,6 @@ Then just run:
 terraform apply
 📤 View outputs (EC2 IP, RDS endpoint):
 terraform output
-🔧 Optional: Using the Makefile
-You can also use the included Makefile to simplify commands:
-
-make init
-make apply DB_PASSWORD=YOUR_SECURE_PASSWORD
-make outputs
-make destroy DB_PASSWORD=YOUR_SECURE_PASSWORD
 🛡 .gitignore Notes
 The following files are ignored for security:
 
@@ -46,6 +39,5 @@ terraform.tfvars
 .terraform/
 terraform.tfstate
 terraform.tfstate.backup
-
-❌ Never commit .pem files or terraform.tfvars with passwords.
+⚠️ Never commit .pem files or terraform.tfvars with passwords.
 
