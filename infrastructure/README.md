@@ -1,4 +1,4 @@
-```markdown
+markdown
 # 🛠 Infrastructure Setup with Terraform
 
 This folder contains the infrastructure-as-code (IaC) setup for the project using **Terraform** on AWS.  
@@ -89,6 +89,6 @@ terraform.tfstate.backup
 ```
 
 ⚠️ **Never commit `.pem` files or `terraform.tfvars` with passwords.**
-```
+
 
 
