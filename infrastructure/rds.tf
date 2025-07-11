@@ -12,7 +12,7 @@ resource "aws_db_subnet_group" "default" {
 resource "aws_db_instance" "postgres" {
   identifier              = "grocery-postgres-db"
   engine                  = "postgres"
-  engine_version          = "16.6"
+  engine_version          = "16.8"
   instance_class          = "db.t3.micro"
   allocated_storage       = 20
   db_name                 = var.db_name

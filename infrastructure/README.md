@@ -1,0 +1,92 @@
+```markdown
+# 🛠 Infrastructure Setup with Terraform
+
+This folder contains the infrastructure-as-code (IaC) setup for the project using **Terraform** on AWS.  
+It includes everything needed to launch a backend-ready environment with compute and database resources.
+
+## 📁 What's Included
+
+✅ EC2 Instance (Amazon Linux 2) with key pair access  
+✅ Security Group allowing SSH (port 22) and HTTP (port 80)  
+✅ RDS PostgreSQL instance (version configurable)  
+✅ Modular files for better organisation  
+✅ `.gitignore` to protect sensitive files  
+
+---
+
+## 🚀 How to Deploy
+
+### 🔐 Authenticate with AWS Using SSO:
+
+```bash
+aws sso login --profile YOUR_PROFILE_NAME
+```
+
+Or with credentials:
+
+```bash
+aws configure
+```
+
+---
+
+### 📦 Move into the infrastructure folder:
+
+```bash
+cd infrastructure/
+```
+
+---
+
+### 🧱 Initialize Terraform:
+
+```bash
+terraform init
+```
+
+---
+
+### 🚀 Apply the infrastructure:
+
+With password inline:
+
+```bash
+terraform apply -var="db_password=YOUR_SECURE_PASSWORD"
+```
+
+Or create a `terraform.tfvars` file with:
+
+```hcl
+db_password = "YOUR_SECURE_PASSWORD"
+```
+
+Then just run:
+
+```bash
+terraform apply
+```
+
+---
+
+### 📤 View outputs (EC2 IP, RDS endpoint):
+
+```bash
+terraform output
+```
+
+---
+
+## 🛡 .gitignore Notes
+
+The following files are ignored for security:
+
+```
+*.pem
+terraform.tfvars
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+```
+
+⚠️ **Never commit `.pem` files or `terraform.tfvars` with passwords.**
+```
