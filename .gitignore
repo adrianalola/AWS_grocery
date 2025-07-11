@@ -3,3 +3,10 @@ frontend/frontend-build.zip
 frontend/temp_extract/
 frontend/src/config.js~
 venv/
+# Ignorar carpetas y archivos de Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+# Archivos innecesarios del sistema
+.DS_Store
