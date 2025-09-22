@@ -10,3 +10,17 @@ terraform.tfstate.backup
 
 # Archivos innecesarios del sistema
 .DS_Store
+# --- large/binary artifacts (do not commit) ---
+*.tar
+*.zip
+*.gz
+*.tgz
+*.db
+*.bak
+*.backup
+backend/grocerymate.tar
+infrastructure/modules/lambda_publisher/.build/
+# Terraform cache/state
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate*
