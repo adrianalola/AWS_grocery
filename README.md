@@ -28,9 +28,9 @@ It wasn’t always smooth but every challenge taught me how AWS works under pres
 
 10. [✅ Key Learnings](#Key-Learnings)
 
-11. [🙏 Credits](Credits)
+11. [🤝 Contributing](#Contributing)
 
-12. [🤝 Contributing](#Contributing)
+12. [🙏 Credits](Credits)
 
 ## 1. 🚀 Project Overview
 
@@ -48,7 +48,9 @@ Product images are served efficiently via CloudFront CDN.
 
 ## 2. 🖼️ Architecture Diagram
 
-![bonitodiagrama.png](bonitodiagrama.png)
+<img width="771" height="542" alt="bonitodiagrama" src="https://github.com/user-attachments/assets/d7c416d6-f558-44c0-9d11-9fc985bbbabb" />
+
+
 
 ## 3. 🛠️ Infrastructure Design
 
@@ -130,12 +132,8 @@ The final setup allows sending **HTML-based emails** with images and call-to-act
 
 ### 📸 Example Email
 
-![imagenaguacate.png](imagen_aguacate.png)
+<img width="737" height="666" alt="imagenaguacate" src="https://github.com/user-attachments/assets/a69ab7e7-3bcb-4145-ba8d-653f7380149e" />
 
-```html
-<!-- Optional GitHub-hosted version -->
-<img src="https://raw.githubusercontent.com/your-user/your-repo/main/imagenaguacate.png" width="600"/>
-```
 
 
 ## 8. 🌐 Static Assets with CloudFront
