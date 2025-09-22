@@ -1,6 +1,3 @@
-provider "aws" {
-  region = var.aws_region
-}
 
 #VPC por defecto
 data "aws_vpc" "default" {
@@ -66,4 +63,18 @@ resource "aws_instance" "web_server" {
   }
 
   depends_on = [aws_security_group.web_sg]
+}
+
+######## SNS Topic ########
+module "sns" {
+  source       = "./modules/sns"
+  project_name = var.project_name
+}
+
+######## Lambda Publisher (publica en SNS) ########
+module "lambda_publisher" {
+  source             = "./modules/lambda_publisher"
+  project_name       = var.project_name
+  sns_topic_arn      = module.sns.topic_arn
+  lambda_source_file = "${path.root}/../lambda/new_product_notifier/app.py"
 }

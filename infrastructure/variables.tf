@@ -25,7 +25,7 @@ variable "aws_region" {
 variable "profile" {
   description = "AWS CLI named profile (if used)"
   type        = string
-  default     = "administradoracces" 
+  default     = "administradoracces"
 }
 
 variable "ami" {
@@ -47,4 +47,17 @@ variable "db_username" {
 variable "db_password" {
   description = "Password for the PostgreSQL DB"
   sensitive   = true
+}
+
+variable "project_name" {
+  description = "Project name prefix"
+  type        = string
+  default     = "grocerymate"
+}
+
+# Domain (o website host) desde el que se servirán imágenes públicas
+variable "cloudfront_domain" {
+  description = "Public domain/host for product images (CloudFront or S3 website)"
+  type        = string
+  default     = ""
 }

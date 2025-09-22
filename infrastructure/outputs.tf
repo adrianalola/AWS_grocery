@@ -14,3 +14,13 @@ output "rds_private_endpoint" {
 #   description = "Endpoint of the public PostgreSQL RDS instance"
 #   value       = aws_db_instance.postgres.endpoint
 # }
+
+output "sns_topic_arn" {
+  value       = module.sns.topic_arn
+  description = "SNS topic ARN for new product notifications"
+}
+
+output "lambda_notifier_arn" {
+  value       = module.lambda_publisher.lambda_function_arn
+  description = "Lambda publisher ARN"
+}

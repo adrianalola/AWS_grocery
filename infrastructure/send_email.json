@@ -1,0 +1,10 @@
+{
+  "FromEmailAddress": "adryland79@gmail.com",
+  "Destination": { "ToAddresses": ["adryland79@gmail.com"] },
+  "Content": {
+    "Template": {
+      "TemplateName": "GrocerymateNewProduct",
+      "TemplateData": "{\"product\":{\"product_name\":\"Organic Avocado\",\"sku\":\"AVO-001\",\"price\":3.49,\"image_url\":\"https:///products/avocado_cf.png\",\"product_url\":\"https://example.com/product/AVO-001\",\"manage_prefs_url\":\"https://example.com/preferences\"}}"
+    }
+  }
+}

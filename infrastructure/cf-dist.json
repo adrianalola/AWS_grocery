@@ -1,0 +1,39 @@
+{
+  "CallerReference": "1756585163",
+  "Comment": "GroceryMate products via CloudFront",
+  "Enabled": true,
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "s3-origin",
+        "DomainName": "grocerymate-products-public-adry79.s3.eu-central-1.amazonaws.com",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": ""
+        }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "s3-origin",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": ["GET", "HEAD"]
+    },
+    "Compress": true,
+    "ForwardedValues": {
+      "QueryString": true,
+      "Cookies": { "Forward": "none" },
+      "Headers": { "Quantity": 0 },
+      "QueryStringCacheKeys": { "Quantity": 0 }
+    },
+    "MinTTL": 0,
+    "DefaultTTL": 86400,
+    "MaxTTL": 31536000
+  },
+  "ViewerCertificate": {
+    "CloudFrontDefaultCertificate": true
+  },
+  "PriceClass": "PriceClass_100"
+}
